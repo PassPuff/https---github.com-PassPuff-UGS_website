@@ -1,0 +1,128 @@
+body {
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+}
+
+.nav-links a{
+    /* color: white; */
+}
+
+.menu {
+    display: flex;
+    font-size: 18px;
+}
+
+.menu li {
+    padding: 5px 15px;
+}
+
+.menu li a:hover {
+    transition: all 0.3s;
+    color: gainsboro;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.humburger {
+    display: none;
+    cursor: pointer;
+}
+
+.humburger-line {
+    background-color: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.humburger-line::after,
+.humburger-line::before {
+    background-color: white;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: all 0.3s;
+    width: 100%;
+    height: 100%;
+
+}
+
+.humburger-line::before {
+    top: 7px;
+
+}
+
+.humburger-line::after {
+    top: -7px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        background-color: #3e2160;
+        text-align: center;
+        right: 0;
+        left: 0;
+        margin-top: 20px;
+        box-shadow: 1px 1px 5px ;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .menu li {
+        transition: all .5s;
+    }
+
+    .menu li:hover {
+        background-color: rgb(92, 87, 82);
+    }
+
+    .humburger {
+        display: block;
+        padding: 20px 0;
+    }
+    #checkbox_toggle:checked ~ .menu {
+        display: block;
+        max-height: 100%;
+        transition: all 0.5s;
+    }
+
+    #checkbox_toggle:checked ~ .humburger .humburger-line {
+        background-color: transparent;
+    }
+
+    #checkbox_toggle:checked ~ .humburger .humburger-line::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    #checkbox_toggle:checked ~ .humburger .humburger-line::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+}
